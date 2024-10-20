@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz App</title>
+    <link href="/style/output.css" rel="stylesheet">
+</head>
+<body>
+<div class="flex items-center justify-center w-screen h-screen bg-blue-300 px-5">
+    <div id="start_container" class="flex flex-col gap-8 bg-white p-5 rounded-md max-w-screen-lg">
+        <div class="text-3xl">Quiz App</div>
+        <div>You have 10 questions in total and 30 seconds per question. You cannot answer the question for 10 seconds
+            after the question is loaded. In the end, you will see your quiz results and points.
+        </div>
+        <ul>
+            <li><span class="text-lime-500">Correct</span> Answer: +10 Points</li>
+            <li><span class="text-red-700">Wrong</span> Answer: -5 Points</li>
+            <li><span class="text-gray-500">Empty</span> Answer: -2 Points</li>
+        </ul>
+        <div id="spinner" class="mx-auto bg-blue-300 rounded-lg"></div>
+        <button disabled class="nextButton hidden mx-auto" id="start_button">
+            Start the Quiz
+        </button>
+    </div>
+    <div id="question_container" class="flex flex-col gap-5 bg-white rounded-md p-5 hidden">
+        <div id="question" class="text-xl"></div>
+        <div class="flex flex-col gap-4">
+            <div id="answer_container" class="flex flex-col select-none gap-3">
+                <div class="option">
+                    <input id="option_a" name="option" type="radio" data-waschecked="false">
+                    <label for="option_a">A) <span id="answer_a"></span>
+                    </label>
+                </div>
+                <div class="option">
+                    <input id="option_b" name="option" type="radio" data-waschecked="false">
+                    <label for="option_b">B) <span id="answer_b"></span>
+                    </label>
+                </div>
+                <div class="option">
+                    <input id="option_c" name="option" type="radio" data-waschecked="false">
+                    <label for="option_c">C) <span id="answer_c"></span>
+                    </label>
+                </div>
+                <div class="option">
+                    <input id="option_d" name="option" type="radio" data-waschecked="false">
+                    <label for="option_d">D) <span id="answer_d"></span>
+                    </label>
+                </div>
+            </div>
+            <button disabled id="next_button" class="nextButton mx-auto">
+                Save and Pass Next Question
+            </button>
+            <div class="flex flex-col gap-1">
+                <div id="remaining_time">
+                </div>
+                <div id="remaining_line"></div>
+            </div>
+        </div>
+    </div>
+    <div id="table_container" class="flex flex-col gap-5 hidden">
+        <div class="text-white text-3xl mx-auto">Your Answers</div>
+        <table id="answer_table">
+            <tr>
+                <th>Question</th>
+                <th>Your Answer</th>
+                <th>Correct Answer</th>
+                <th>Status</th>
+            </tr>
+        </table>
+        <button id="restart_button" class="nextButton hidden w-fit">
+            Restart Quiz
+        </button>
+    </div>
+</div>
+</body>
+<script src="/script/index.js"></script>
+</html>

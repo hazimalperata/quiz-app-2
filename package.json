@@ -1,0 +1,14 @@
+{
+  "name": "quiz-app-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tw-w": "tailwindcss -i ./style/input.css -o ./style/output.css --watch"
+  },
+  "private": true,
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}
